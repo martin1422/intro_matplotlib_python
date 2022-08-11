@@ -8,9 +8,37 @@
 # que aparecen en verde con el hashtag "#"
 
 # Ejercicios de matplotlib
+from cProfile import label
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+def cuatro_graficos(x, y1, y2, y3, y4):
+    
+    fig = plt.figure()
+    fig.suptitle('Cuatro graficos', fontsize=16)
+    ax1 = fig.add_subplot(2, 2, 1)  # 2 fila, 2 columnas, axes nº1
+    ax2 = fig.add_subplot(2, 2, 2)  # 2 fila, 2 columnas, axes nº2    
+    ax3 = fig.add_subplot(2, 2, 3)  # 2 fila, 2 columnas, axes nº3
+    ax4 = fig.add_subplot(2, 2, 4)  # 2 fila, 2 columnas, axes nº4    
+
+    ax1.plot(x, y1, c='r', marker='+')
+    ax1.legend(['X^2'], title = "Cuadrado")
+    ax1.grid()
+
+    ax2.scatter(x, y2, c='c', marker='1')
+    ax2.legend(['X^3'], title = "Cubo")
+    ax2.grid(linestyle='dotted', linewidth=1)
+
+    ax3.scatter(x, y3, c='y', marker='2')
+    ax3.legend(['X^4'], title = "Cuarta")
+    ax3.grid()
+ 
+    ax4.scatter(x, y4, c='b', marker='3')
+    ax4.legend(['X^(1/2)'], title = "Raiz")
+    ax4.grid()
+
+    plt.show()
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
@@ -53,5 +81,6 @@ if __name__ == '__main__':
     # Colocar una grilla a elección
 
     # Crear acá su gráfico
+    cuatro_graficos(x, y1, y2, y3, y4)
 
     print("terminamos")

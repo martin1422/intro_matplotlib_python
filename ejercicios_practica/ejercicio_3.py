@@ -8,9 +8,23 @@
 # que aparecen en verde con el hashtag "#"
 
 # Ejercicios de matplotlib
+from cProfile import label
 import numpy as np
 import matplotlib.pyplot as plt
 
+def scatter_plot(x, y):
+
+    fig = plt.figure()
+    fig.suptitle('Grafico', fontsize=16)
+    ax1 = fig.add_subplot(1, 2, 1)  # 1 fila, 2 columnas, axes nº1
+    
+    # Como los datos no están ordenados por año
+    # el plot no funcionará bien en este caso
+    ax1.scatter(x, y, c='darkgreen', label='Figuras')
+    ax1.legend()
+    ax1.grid()
+    plt.show()
+    print("Fin scatter plot")
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
@@ -33,5 +47,6 @@ if __name__ == '__main__':
     # Elegir un marker a elección
 
     # Crear acá su gráfico
+    scatter_plot(x, y)
 
     print("terminamos")

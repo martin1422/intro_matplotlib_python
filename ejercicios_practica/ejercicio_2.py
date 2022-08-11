@@ -12,6 +12,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+def multi_line_plot(x, y1, y2):
+    
+    fig = plt.figure()
+    fig.suptitle('Graficos ', fontsize=16)
+    ax = fig.add_subplot()
+
+    ax.plot(x, y1, label='Parabola')
+    ax.plot(x, y2, label='Cubica')
+    ax.legend()
+    ax.grid()
+    plt.show()
+    print("Fin multi line plot")
+
+
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     print("Line Plot")
@@ -34,6 +48,8 @@ if __name__ == '__main__':
     y2 = []
     for i in x:
         y2.append(i**3)
+
+    multi_line_plot(x, y1, y2)    
 
     # Alumno: Realizar un gráfico que representen las dos funciones
     # Para ello se debe llamar dos veces a "plot" con el mismo "ax"

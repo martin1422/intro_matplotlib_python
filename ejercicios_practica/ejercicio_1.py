@@ -21,11 +21,18 @@ if __name__ == '__main__':
     # Se desea graficar los valores de "x" e "y" en un gráfico de línea
     # A continuación los datos ya disponibles de "x" e "y" para que utilice:
     x = list(range(-10, 11, 1))
-
+    
     # Bucle que completa y calcula todos los valores de "y"
     y = []
     for i in x:
         y.append(i**2)
+
+    fig = plt.figure()
+    ax = fig.add_subplot()
+    ax.plot(x,y)
+    ax.set_title("Parabola")
+    plt.show()
+
 
     # Alumno: Crear una "figura" y crear un "ax" con add_subplot
     # Graficar el "line plot" de "y" en función de "x"
